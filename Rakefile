@@ -13,6 +13,9 @@ namespace :db do
   task :drop => :environment do 
     drop_db
   end
+
+  desc "drop and recreate the db"
+  task :reset => [:drop, :migrate]
 end
 
 task :console => :environment do
